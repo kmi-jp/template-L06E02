@@ -38,6 +38,13 @@ user 4\t50000"""
     assert repr(salaries) == expected
     assert str(salaries) == expected
 
+def test_shape():
+    values = [20000, 300000, 20000, 50000]
+    idx = Index(["user 1", "user 2", "user 3", "user 4"], name="names")
+
+    salaries = Series(values=values, index=idx)
+    
+    assert salaries.shape == (4,)
 
 def test_empty_index():
     values = [20000, 300000, 20000, 50000]

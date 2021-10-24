@@ -1,6 +1,9 @@
 # L06E02: Data 2
 Balíček `data` z minulého semináře rozšiřte o následující funkcionalitu.
 
+## Metoda `__len__`
+Třídě `DataFrame`, `Series` a `Index` implementujte metodu `__len__` obsluhující volání funkce `len()`. V případě třídy `Series` a `Index` se jedná o počet prvků, v případě `DataFrame` o počet sloupců.
+
 ## Vlastnost `.shape`
 Třídě `DataFrame` a `Series` přidejte vlastnost `.shape`, která pomoci tuple reprezentuje rozměry. Vlastnost se bude po každém volání přepočítávat (použíjte dekorátor `@property`).
 
@@ -85,7 +88,7 @@ user 4  50000
 V případě třídy `DataFrame` bude metoda `__repr__` a `__str__` jednoduší:
 
 ```
-DataFrame(2,4)
+DataFrame(2, 4)
 ```
 
 Kde `2` (počet řádků) a `4` jsou rozměry dataframu.
