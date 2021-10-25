@@ -5,7 +5,7 @@ from data.index import Index
 
 def test_index():
     test_labels = ["key 1", "key 2", "key 3", "key 4", "key 5"]
-    
+
     idx = Index(labels=test_labels)
     values = [0, 1, 2, 3, 4]
 
@@ -34,3 +34,14 @@ def test_invalid_key():
 def test_label_duplicity():
     with pytest.raises(ValueError):
         Index(["key 1", "key 1", "key 3", "key 4", "key 5"])
+    
+
+@pytest.mark.parametrize(
+    "function",
+    [
+        Index,
+        Index.get_loc
+    ],
+)
+def test_docstrings(function):
+    assert function.__doc__ is not None

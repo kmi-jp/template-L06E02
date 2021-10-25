@@ -90,3 +90,16 @@ def test_empty_columns():
     assert data.values == [names, salaries, cash_flow]
     assert data.get(1) == salaries
     assert data.get(2).max() == 10000
+
+
+@pytest.mark.parametrize(
+    "function",
+    [
+        DataFrame,
+        DataFrame.from_csv,
+        DataFrame.get,
+        DataFrame.shape
+    ],
+)
+def test_docstrings(function):
+    assert function.__doc__ is not None

@@ -170,3 +170,22 @@ def test_operators_exception(operator):
 
 def test_round():
     assert round(Series([1.252, 2.23231312]), 2).values == Series([1.25, 2.23]).values
+
+
+@pytest.mark.parametrize(
+    "function",
+    [
+        Series,
+        Series.from_csv,
+        Series.get,
+        Series.shape,
+        Series.sum,
+        Series.max,
+        Series.min,
+        Series.mean,
+        Series.apply,
+        Series.abs
+    ],
+)
+def test_docstrings(function):
+    assert function.__doc__ is not None
