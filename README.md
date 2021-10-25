@@ -1,5 +1,5 @@
 # L06E02: Data 2
-Balíček `data` z minulého semináře rozšiřte o následující funkcionalitu.
+Balíček `data` z minulého semináře rozšiřte o následující funkcionalitu. Ve zdrojovém kódu urdžujte pořádek a metody seskupujte dle významu.
 
 ## Metoda `__len__`
 Třídě `DataFrame`, `Series` a `Index` implementujte metodu `__len__` obsluhující volání funkce `len()`. V případě třídy `Series` a `Index` se jedná o počet prvků, v případě `DataFrame` o počet sloupců.
@@ -92,3 +92,28 @@ DataFrame(2, 4)
 ```
 
 Kde `2` (počet řádků) a `4` jsou rozměry dataframu.
+
+## Series operace
+Třídě `Series` implementujte následující operace. Veškeré operace pracují po prvcících, výsledkem je vždy nová instance `Series`. Pokud vstupní instance nebudou mít stejnou délky, vyvolejte `ValueError`.
+
+```
+__add__ # chování +
+__sub__ # chování -
+__mul__ # chování *
+__truediv__ # chování /
+__floordiv__ # chování //
+__mod__ # chování %
+__pow__ # chování ** nebo pow()
+```
+
+Metody implementujte pomoci pomocné metody `Series._apply_operator(self, other, operator)`, která využívá modul `operator` https://docs.python.org/3/library/operator.html. Sčítání pak například tedy můžeme realizovat jako:
+
+```python
+import operator
+
+...
+self._apply_operator(self, other, operator.add)
+...
+```
+
+Dále implementujte metodu `__round__(self, precision)` umožňující použití vestavěné funkce `round(number, precision)`. Výsledkem je opět nová instance `Series`. Dokážete použít metodu `Series.apply(self, func)`?
