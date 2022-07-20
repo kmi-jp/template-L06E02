@@ -117,3 +117,10 @@ self._apply_operator(self, other, operator.add)
 ```
 
 Dále implementujte metodu `__round__(self, precision)` umožňující použití vestavěné funkce `round(number, precision)`. Výsledkem je opět nová instance `Series`. Dokážete použít metodu `Series.apply(self, func)`?
+
+## Lokální testování
+Funkčnost řešení ověříte následujícím příkazem:
+
+```bash
+pytest
+```

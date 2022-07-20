@@ -184,7 +184,7 @@ def test_round():
         Series.min,
         Series.mean,
         Series.apply,
-        Series.abs
+        Series.abs,
     ],
 )
 def test_docstrings(function):
