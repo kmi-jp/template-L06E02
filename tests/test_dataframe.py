@@ -52,7 +52,7 @@ user 2,Petr Pavel,300000,10000
 user 3,Pavel Petr,20000,-2000
 user 4,Ludek Skocil,50000,1100"""
 
-    data = DataFrame.from_csv(input_text)
+    data = DataFrame.from_csv(text=input_text)
 
     assert data.columns.labels == ["names", "salary", "cash flow"]
 
