@@ -28,7 +28,7 @@ def test_series(values_data, idx):
 def test_empty_index(values_data):
     salaries = Series(values=values_data)
 
-    assert salaries.index.labels == Index(labels=range(len(values_data))).labels
+    assert salaries.index.labels == Index(labels=list(range(len(values_data)))).labels
 
 
 def test_series_get(values_data, idx):

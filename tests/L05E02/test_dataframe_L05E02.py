@@ -57,7 +57,7 @@ def test_empty_columns(users_data, salaries_data, names_data, cash_flow_data):
 
     data = DataFrame(values=[names, salaries, cash_flow])
 
-    assert data.columns.labels == Index(range(3)).labels
+    assert data.columns.labels == Index(labels=list(range(3))).labels
     assert data.values == [names, salaries, cash_flow]
     assert data.get(key=1) == salaries
     assert data.get(key=2).max() == 10000
